@@ -17,7 +17,7 @@
     align-items: center;
     column-gap: 20px;
     row-gap: 10px;
-    background-image: url("https://www.istockphoto.com/photo/mountain-landscape-gm517188688-89380423");
+    background-image: url("image/nature.jpeg");
 }
 .child{
     border: 1px solid black;
