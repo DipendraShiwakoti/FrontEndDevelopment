@@ -28,7 +28,7 @@ const getCountryData = function (country) {
     .then((response) => response.json())
     .then((data) => {
       renderCountry(data[0]);
-      const neighbour = data[0].borders[0];
+      const neighbour = data[0].borders[1];
 
       if (!neighbour) return;
 
@@ -36,7 +36,10 @@ const getCountryData = function (country) {
       return fetch(`https://restcountries.com/v2/alpha/${neighbour}`);
     })
     .then((response) => response.json())
-    .then((data) => renderCountry(data, 'neighbour'));
+    .then((data) => renderCountry(data, 'neighbour'))
+    .catch((err)=>{
+      console.log("404 Error")
+    });
 };
 
-getCountryData('nepal');
+getCountryData('Nepal');
